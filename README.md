@@ -30,6 +30,7 @@ This is the real thing that is seding SMS via  Bulkgate.com API
 ```ruby
 #config/environments/production.rb
 
+require 'sms_gateway_contract/real'
 Rails.application.configure do
   # ...
   config.x.sms_gateway = 'SmsGatewayContract::Real'
@@ -56,6 +57,7 @@ https://blog.eq8.eu/article/explicit-contracts-for-rails-http-api-usecase.html
 ```ruby
 #config/environments/test.rb
 
+require 'sms_gateway_contract/mock'
 Rails.application.configure do
   # ...
   config.x.sms_gateway = 'SmsGatewayContract::Mock'
@@ -88,6 +90,7 @@ Will log SMS codes to `log/sms.log`
 ```ruby
 #config/environments/development.rb
 
+require 'sms_gateway_contract/file'
 Rails.application.configure do
   # ...
   config.x.sms_gateway = 'SmsGatewayContract::File'
