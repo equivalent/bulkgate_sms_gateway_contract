@@ -9,7 +9,7 @@ Gem is designed for Rails only.
 
 Add this line to your application's Gemfile:
 ```ruby
-gem 'sms_gateway_contract'
+gem 'sms_gateway_contract', github: 'equivalent/sms_gateway_contract'
 ```
 
 And then execute:
