@@ -1,3 +1,5 @@
+require 'rails'
+require 'httparty'
 require "sms_gateway_contract/version"
 
 module SmsGatewayContract
