@@ -1,5 +1,5 @@
 module SmsGatewayContract
-  module File
+  module FileLog
     def self.send_sms(number:, country:, body:)
       _logger.info("#{country}:#{number} - #{body}")
     end

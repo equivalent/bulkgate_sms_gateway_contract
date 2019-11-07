@@ -83,17 +83,17 @@ RSpec.describe 'sending of SMS' do
 end
 ```
 
-#### File
+#### FileLog
 
 Will log SMS codes to `log/sms.log`
 
 ```ruby
 #config/environments/development.rb
 
-require 'sms_gateway_contract/file'
+require 'sms_gateway_contract/file_log'
 Rails.application.configure do
   # ...
-  config.x.sms_gateway = 'SmsGatewayContract::File'
+  config.x.sms_gateway = 'SmsGatewayContract::FileLog'
   # ...
 end
 ```
