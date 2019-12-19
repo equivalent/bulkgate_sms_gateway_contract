@@ -2,6 +2,7 @@ require 'json'
 require 'rails'
 require 'httparty'
 require "bulkgate_sms_gateway_contract/version"
+require "bulkgate_sms_gateway_contract/fake_contract_commonalities"
 require "bulkgate_sms_gateway_contract/real"
 require "bulkgate_sms_gateway_contract/mock"
 require "bulkgate_sms_gateway_contract/file_log"
