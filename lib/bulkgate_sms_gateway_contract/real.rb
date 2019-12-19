@@ -26,11 +26,11 @@ module BulkgateSmsGatewayContract
         error_type = resp_body_hash['type'] 
         case error_type
         when 'invalid_phone_number'
-          raise BulkgateSmsGatewayContract::InvalidPhoneNumber
+          raise BulkgateSmsGatewayContract::InvalidPhoneNumber, error_type
         when 'empty_message'
-          raise BulkgateSmsGatewayContract::EmptyMessageBody
+          raise BulkgateSmsGatewayContract::EmptyMessageBody, error_type
         when 'low_credit'
-          raise BulkgateSmsGatewayContract::OutOfCredit
+          raise BulkgateSmsGatewayContract::OutOfCredit, error_type
         else
           # for more deatils see https://help.bulkgate.com/docs/en/api-error-types.html#error-types
           raise BulkgateSmsGatewayContract::BulkgateError, error_type
