@@ -1,16 +1,16 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "sms_gateway_contract/version"
+require "bulkgate_sms_gateway_contract/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "sms_gateway_contract"
-  spec.version       = SmsGatewayContract::VERSION
+  spec.name          = "bulkgate_sms_gateway_contract"
+  spec.version       = BulkgateSmsGatewayContract::VERSION
   spec.authors       = ["Tomas Valent"]
   spec.email         = ["equivalent@eq8.eu"]
 
-  spec.summary       = %q{Contract classes for SMS Gateway}
+  spec.summary       = %q{Contract classes for SMS Gateway provided by Bulkgate}
   spec.description   = %q{Contract classes for SMS Gateway (test + production for Bulkgate.com API)}
-  spec.homepage      = "https://github.com/equivalent/sms_gateway_contract"
+  spec.homepage      = "https://github.com/equivalent/bulkgate_sms_gateway_contract"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "httparty"
-  spec.add_dependency 'rails', ">= 5.2"
+  spec.add_dependency 'rails', ">= 5.2" # needed for credentials
 
-  spec.add_development_dependency "bundler", "~> 1.17"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake", "~> 10.0"
 end
