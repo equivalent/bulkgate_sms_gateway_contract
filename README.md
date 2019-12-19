@@ -9,7 +9,7 @@ Gem is designed for Rails only.
 
 Add this line to your application's Gemfile:
 ```ruby
-gem 'sms_gateway_contract', github: 'equivalent/sms_gateway_contract'
+gem 'bulkgate_sms_gateway_contract'
 ```
 
 And then execute:
@@ -60,7 +60,7 @@ You can capture exception as
 
 ```ruby
 begin
-  BulkgateSmsGatewayContract::Real.send_sms(country: 'sk', number: 'this-is-wrong', body: '666666 is your Authentication code')
+  BulkgateSmsGatewayContract.contract.send_sms(country: 'sk', number: 'this-is-wrong', body: '666666 is your Authentication code')
 rescue BulkgateSmsGatewayContract::BulkgateError => e
   puts "rescue any API specific error form Bulkgate"
 end
@@ -68,7 +68,7 @@ end
 # or
 
 begin
-  BulkgateSmsGatewayContract::Real.send_sms(country: 'sk', number: 'this-is-wrong', body: '666666 is your Authentication code')
+  BulkgateSmsGatewayContract.contract.send_sms(country: 'sk', number: 'this-is-wrong', body: '666666 is your Authentication code')
 rescue BulkgateSmsGatewayContract::BulkgateError, 'invalid_phone_number'
   puts "phone number invalid"
 end
@@ -140,7 +140,6 @@ can use for production debugging `AirbrakeNotify` contract
 ```ruby
 # config/environments/production.rb
 
-
 # This contract is not loaded by default. You need to explicitly require it
 require 'sms_gateway_contract/airbrake_notify'
 
@@ -154,4 +153,4 @@ require 'sms_gateway_contract/airbrake_notify'
 
 ## Code of Conduct
 
-Everyone interacting in the SmsGatewayContract project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/equivalent/sms_gateway_contract/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the SmsGatewayContract project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/equivalent/bulkgate_sms_gateway_contract/blob/master/CODE_OF_CONDUCT.md).
