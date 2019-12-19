@@ -17,8 +17,6 @@ module BulkgateSmsGatewayContract
         })
       end
 
-      require 'pry'; binding.pry
-
       resp = HTTParty.post('https://portal.bulkgate.com/api/1.0/simple/transactional', body: body)
       case resp.code
       when 401
